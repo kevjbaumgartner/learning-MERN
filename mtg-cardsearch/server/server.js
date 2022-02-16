@@ -2,11 +2,15 @@
 const express = require('express');
 const mongo = require('mongodb');
 const url = require('url');
+const cors = require('cors');
 
 // Declarations
 const app = express();
 const MongoClient = mongo.MongoClient;
 const port = (process.env.port || 3005);
+
+// Middleware
+app.use(cors());
 
 // Server listener
 app.listen(port, () => {
@@ -27,7 +31,10 @@ app.get("/search", (req, res) => {
 
 		db.collection('cards').find(queryStr).toArray((err, result) => {
 			if (err) throw err;
-			res.send("<img src=" + result[1].image_uris.normal + "></img>");
+			res.send(
+				result[1]
+				//"<img src=" + result[1].image_uris.normal + "></img>"
+			);
 		});
 	});
 });
