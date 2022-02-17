@@ -1,12 +1,7 @@
-// Module imports
+// Module imports && declarations
 const mongo = require('mongodb');
-const env = require('dotenv');
-
-// Declare env vars path
-//env.config({ path: './config.env' });
-
-// Declarations
 const MongoClient = mongo.MongoClient;
+
 const Db = process.env.DB_URI;
 const client = new MongoClient(Db, {
 	useNewUrlParser: true,
