@@ -25,7 +25,7 @@ export default function Edit() {
 			const record = await response.json();
 			if (!record) {
 				window.alert(`Record with id not found:` + id);
-				navigate("/");
+				navigate('/');
 				return;
 			};
 			setForm(record);
@@ -63,71 +63,71 @@ export default function Edit() {
 		<div>
 			<h3>Update Record</h3>
 			<form onSubmit={onSubmit}>
-				<div className="form-group">
-					<label htmlFor="name">Name: </label>
+				<div className='form-group'>
+					<label htmlFor='name'>Name: </label>
 					<input
-						type="text"
-						className="form-control"
-						id="name"
+						type='text'
+						className='form-control'
+						id='name'
 						value={form.name}
 						onChange={(e) => updateForm({ name: e.target.value })}
 					/>
 				</div>
-				<div className="form-group">
-					<label htmlFor="position">Position: </label>
+				<div className='form-group'>
+					<label htmlFor='position'>Position: </label>
 					<input
-						type="text"
-						className="form-control"
-						id="position"
+						type='text'
+						className='form-control'
+						id='position'
 						value={form.position}
 						onChange={(e) => updateForm({ position: e.target.value })}
 					/>
 				</div>
-				<div className="form-group">
-					<div className="form-check form-check-inline">
+				<div className='form-group'>
+					<div className='form-check form-check-inline'>
 						<input
-							className="form-check-input"
-							type="radio"
-							name="positionOptions"
-							id="positionIntern"
-							value="Intern"
-							checked={form.level === "Intern"}
+							className='form-check-input'
+							type='radio'
+							name='positionOptions'
+							id='positionIntern'
+							value='Intern'
+							checked={form.level === 'Intern'}
 							onChange={(e) => updateForm({ level: e.target.value })}
 						/>
-						<label htmlFor="positionIntern" className="form-check-label">Intern</label>
+						<label htmlFor='positionIntern' className='form-check-label'>Intern</label>
 					</div>
-					<div className="form-check form-check-inline">
+					<div className='form-check form-check-inline'>
 						<input
-							className="form-check-input"
-							type="radio"
-							name="positionOptions"
-							id="positionJunior"
-							value="Junior"
-							checked={form.level === "Junior"}
+							className='form-check-input'
+							type='radio'
+							name='positionOptions'
+							id='positionJunior'
+							value='Junior'
+							checked={form.level === 'Junior'}
 							onChange={(e) => updateForm({ level: e.target.value })}
 						/>
-						<label htmlFor="positionJunior" className="form-check-label">Junior</label>
+						<label htmlFor='positionJunior' className='form-check-label'>Junior</label>
 					</div>
-					<div className="form-check form-check-inline">
+					<div className='form-check form-check-inline'>
 						<input
-							className="form-check-input"
-							type="radio"
-							name="positionOptions"
-							id="positionSenior"
-							value="Senior"
-							checked={form.level === "Senior"}
+							className='form-check-input'
+							type='radio'
+							name='positionOptions'
+							id='positionSenior'
+							value='Senior'
+							checked={form.level === 'Senior'}
 							onChange={(e) => updateForm({ level: e.target.value })}
 						/>
-						<label htmlFor="positionSenior" className="form-check-label">Senior</label>
+						<label htmlFor='positionSenior' className='form-check-label'>Senior</label>
 					</div>
 				</div>
 				<br />
 
-				<div className="form-group">
+				<div className='form-group'>
 					<input
-						type="submit"
-						value="Update Record"
-						className="btn btn-primary"
+						type='submit'
+						value='Update Record'
+						className='btn btn-primary'
 					/>
 				</div>
 			</form>

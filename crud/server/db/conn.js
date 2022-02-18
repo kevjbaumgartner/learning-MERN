@@ -16,7 +16,7 @@ module.exports = {
 		client.connect(function (err, db) {
 			if (db) {
 				_db = db.db('crud');
-				console.log("Successfully connected to MongoDB.");
+				console.log('Successfully connected to MongoDB.');
 			}
 			return callback(err);
 		});

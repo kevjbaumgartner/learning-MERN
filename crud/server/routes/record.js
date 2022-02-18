@@ -6,7 +6,7 @@ const dbo = require('../db/conn'); // MongoDB connection driver
 const recordRoutes = express.Router();
 
 // Declarations
-const ObjectId = require("mongodb").ObjectId;
+const ObjectId = require('mongodb').ObjectId;
 
 // Routes - Record
 recordRoutes.route('/record').get(function (req, res) { // All records
@@ -61,7 +61,7 @@ recordRoutes.route('/update/:id').post(function (req, _res) { // Update a record
 		.collection('records')
 		.updateOne(query, vals, function (err, res) {
 			if (err) throw (err);
-			console.log("1 record updated.");
+			console.log('1 record updated.');
 			_res.json(res);
 		});
 });
